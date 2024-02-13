@@ -1,0 +1,33 @@
+#body{
+    background: #e6e6e638;
+}
+
+.image{
+    background-image: url('../../assets/images/big/3.jpg');
+}
+
+button{
+    background-color: transparent;
+    border: none;
+}
+
+footer{
+    text-align: center;
+    background-color: black;
+    color: white;
+    height: 20vh;
+    padding-top: 4%;
+}
+
+.lien{
+    text-align: center;
+}
+
+.logo{
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
