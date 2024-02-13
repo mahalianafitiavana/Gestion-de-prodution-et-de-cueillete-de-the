@@ -16,6 +16,7 @@ CREATE TABLE variete(
    rendement DECIMAL(15,2)   NOT NULL,
    PRIMARY KEY(id_variete)
 );
+alter table variete add prixvente DECIMAL(18,2);
 
 CREATE TABLE parcelle(
    id_parcelle INT AUTO_INCREMENT,
@@ -32,6 +33,7 @@ CREATE TABLE cueilleurs(
    naissance DATE NOT NULL,
    PRIMARY KEY(id_cueilleur)
 );
+alter table cueilleurs add min DECIMAL(15,2);
 
 CREATE TABLE types(
    id_type INT AUTO_INCREMENT,
