@@ -56,33 +56,39 @@
                             </span>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-8 col-lg-8 col-md-offset-3" style="text-align: center;">
+                <div class="col-sm-12 col-md-10 col-lg-10 col-md-offset-3" style="text-align: center;">
                     <p>Insertion</p>
                     <form class="mt-3" method="get" action="create.php">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <div class="form-group">
                                 <input type="hidden" name="type" value="cueilleur">
                                     <input type="text" class="form-control" id="nametext" name="nom"
                                         placeholder="Nom">
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <div class="form-group">
-                                    <select name="genre" id="">
+                                    <input type="date" class="form-control" id="nametext" name="naissance"
+                                        placeholder="Date de naissance ">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <select name="genre" id="" class="form-control rounded-4">
                                         <option value="" checked>Genre</option>
                                         <option value="F">Feminin</option>
                                         <option value="M">Masculin</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <div class="form-group">
-                                    <input type="tedatext" class="form-control" id="nametext" name="naissance"
-                                        placeholder="Date de naissance ">
+                                    <input type="text" class="form-control" id="nametext" name="minimum"
+                                        placeholder="Poids Minimum Apporte">
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <div class="col-lg-12 text-center">
                                     <button type="submit" class="btn btn-block btn-dark">Submit</button>
                                 </div>
@@ -131,6 +137,13 @@
                                 </span>
                             </a>
                         </li>
+                        <li class="sidebar-item"> 
+                            <a class="sidebar-link" href="gestion_de_saison.php">
+                                <span>
+                                    Configuration de saison
+                                </span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -146,6 +159,7 @@
                                         <th scope="col">Nom</th>
                                         <th scope="col">Genre</th>
                                         <th scope="col">Date de Naissance</th>
+                                        <th scope="col">Poids Minimum</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -155,6 +169,7 @@
                                             <th scope="row"><?php  echo $liste[$i]['nom'] ; ?></th>
                                             <th scope="row"><?php  echo $liste[$i]['genre'] ; ?></th>
                                             <td><?php  echo $liste[$i]['naissance'] ; ?></td>
+                                            <th scope="row"><?php  echo $liste[$i]['min'] ; ?></th>
                                             <td>
                                                 <div class="form-actions">
                                                     <button type="button" class="btn btn-info"><a href="action.php?type=cueilleur&action=delete&id=<?php echo $liste[$i]['id_cueilleur'] ; ?>">Delete </a></button>

@@ -1,5 +1,34 @@
 <?php
     include("connexion.php");
+    function getBonus() {
+        $sql = "select * from bonus ";
+        $result = array();
+        $re =  mysqli_query(dbconnect(),$sql);
+        while($temp=mysqli_fetch_assoc($re))
+        {
+            $result[]=$temp;
+        }
+        return $result;
+    }
+    function getSaison() {
+        $sql = "select * from saison ";
+        $result = array();
+        $re =  mysqli_query(dbconnect(),$sql);
+        while($temp=mysqli_fetch_assoc($re))
+        {
+            $result[]=$temp;
+        }
+        return $result;
+    }
+    function updateSaison($array) {
+        $sql1 = "delete from saison ";
+        mysqli_query(dbconnect(),$sql1);
+        for ($i=0; $i < count($array); $i++) { 
+            $sql = "insert into  saison values (".$array[$i]." )";
+            mysqli_query(dbconnect(),$sql);
+        }
+    }
+
     function checkadmin($pseudo,$pwd) {
         
         $sql="select * from users where pseudo='".$pseudo."'"  ;
@@ -34,14 +63,14 @@
         }
         return $result;
     }
-    function createVariete($nom, $occupation, $rendement) {
+    function createVariete($nom, $occupation, $rendement,$prix) {
 
-        $sql="insert into  variete values (default, '%s' ,%s,%s )";
-        $sql = sprintf($sql,$nom,$occupation,$rendement);
+        $sql="insert into  variete values (default, '%s' ,%s,%s, %s )";
+        $sql = sprintf($sql,$nom,$occupation,$rendement,$prix);
         echo ($sql);
         mysqli_query(dbconnect(),$sql);
-
     }
+    
     function updateVariete($id ,$nom, $occupation, $rendement) {
         $sql = "update  variete set  nom = '%s' ,occupation = %s,rendement =  %s  where id_variete = %s  ";
         $sql = sprintf($sql,$nom,$occupation,$rendement, $id);
@@ -56,10 +85,10 @@
     }
 
     /* ceuilleurs */
-    function createCeuilleur($nom, $genre, $naissance) {
+    function createCeuilleur($nom, $genre, $naissance,$min) {
         
-        $sql="insert into  cueilleurs values (default, '%s' ,'%s','%s' )";
-        $sql = sprintf($sql,$nom,$genre,$naissance);
+        $sql="insert into  cueilleurs values (default, '%s' ,'%s','%s',%s )";
+        $sql = sprintf($sql,$nom,$genre,$naissance,$min);
         echo ($sql);
         mysqli_query(dbconnect(),$sql);
         

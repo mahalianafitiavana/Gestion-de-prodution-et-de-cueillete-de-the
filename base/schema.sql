@@ -1,3 +1,7 @@
+
+
+
+
 CREATE TABLE users(
    id_users INT AUTO_INCREMENT,
    nom VARCHAR(50)  NOT NULL,
@@ -16,7 +20,6 @@ CREATE TABLE variete(
    rendement DECIMAL(15,2)   NOT NULL,
    PRIMARY KEY(id_variete)
 );
-alter table variete add prixvente DECIMAL(18,2);
 
 CREATE TABLE parcelle(
    id_parcelle INT AUTO_INCREMENT,
@@ -33,7 +36,6 @@ CREATE TABLE cueilleurs(
    naissance DATE NOT NULL,
    PRIMARY KEY(id_cueilleur)
 );
-alter table cueilleurs add min DECIMAL(15,2);
 
 CREATE TABLE types(
    id_type INT AUTO_INCREMENT,
@@ -68,4 +70,18 @@ CREATE TABLE cueillette(
    PRIMARY KEY(idcueillette),
    FOREIGN KEY(id_parcelle) REFERENCES parcelle(id_parcelle),
    FOREIGN KEY(id_cueilleur) REFERENCES cueilleurs(id_cueilleur)
+);
+
+
+alter table variete add prixvente DECIMAL(18,2);
+
+alter table cueilleurs add min DECIMAL(15,2);
+
+CREATE table saison (
+   mois int
+);
+
+create table bonus (
+   bonus  DECIMAL(18,2),
+   mollus  DECIMAL(18,2)
 );

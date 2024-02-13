@@ -139,7 +139,6 @@
                                             <td>
                                                 <div class="form-actions">
                                                     <button type="button" class="btn btn-info"><a href="action.php?type=types&action=delete&id=<?php echo $liste[$i]['id_type'] ; ?>">Delete </a></button>
-                                                    <button type="button" class="btn btn-dark"><a href="action.php?type=types&action=update&id=<?php echo $liste[$i]['id_type'] ; ?>">Edit </a> </button>
                                                 </div>
                                             </td>
                                         </tr>

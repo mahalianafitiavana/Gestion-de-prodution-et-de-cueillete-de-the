@@ -57,30 +57,36 @@
                             </span>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-8 col-lg-8 col-md-offset-3" style="text-align: center;">
+                <div class="col-sm-12 col-md-10 col-lg-10 col-md-offset-3" style="text-align: center;">
                     <p>Insertion</p>
                     <form class="mt-3" method="get" action="create.php">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <div class="form-group">
                                 <input type="hidden" name="type" value="variete">
                                     <input type="text" class="form-control" id="nametext" name="nom"
                                         placeholder="Nom">
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="nametext" name="occupation"
                                         placeholder="Occupation">
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="nametext" name="rendement"
                                         placeholder="Rendement">
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="nametext" name="prix"
+                                        placeholder="Prix">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
                                 <div class="col-lg-12 text-center">
                                     <button type="submit" class="btn btn-block btn-dark">Submit</button>
                                 </div>
@@ -145,6 +151,7 @@
                                         <th scope="col">Nom</th>
                                         <th scope="col">Occupation</th>
                                         <th scope="col">Rendement</th>
+                                        <th scope="col">Prix</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -155,6 +162,7 @@
                                             <th scope="row"><?php  echo $liste[$i]['nom'] ; ?></th>
                                             <td><?php  echo $liste[$i]['occupation'] ; ?></td>
                                             <td><?php  echo $liste[$i]['rendement'] ; ?></td>
+                                            <td><?php  echo $liste[$i]['prixvente'] ; ?></td>
                                             <td>
                                                 <div class="form-actions">
                                                     <button type="button" class="btn btn-info"><a href="action.php?type=variete&action=delete&id=<?php echo $liste[$i]['id_variete'] ; ?>">Delete </a></button>
